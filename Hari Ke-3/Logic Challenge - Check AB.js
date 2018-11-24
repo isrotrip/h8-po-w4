@@ -16,7 +16,7 @@ function checkAB(num) {
         }
         else{
             jarak = jarak + 1;
-            if(jarak >= 3){
+            if(jarak > 3){
                 hasilcek = false;
             }
             saatini = num[i];

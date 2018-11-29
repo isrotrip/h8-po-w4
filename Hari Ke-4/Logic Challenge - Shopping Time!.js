@@ -1,59 +1,60 @@
 function shoppingTime(memberId, money) {
-  var sepatuStacattu = 1500000;
-  var bajuZoro = 500000;
-  var bajuHN = 250000;
-  var sweaterUniklooh = 175000;
-  var casingHandphone = 50000;
-  var barangBisaDibeli = 1;
-  var barangBelanjaan = [];
-  var dompet = money;
-  
-  if(memberId === undefined || memberId === ''){
-    return 'Mohon maaf, toko X hanya berlaku untuk member saja';
-  }
-  else if(money < 50000){
-    return 'Mohon maaf, uang tidak cukup';
-  }
-  else{
-    while(money >= casingHandphone && barangBisaDibeli === 1){
-      switch(true){
-        case money >= sepatuStacattu && sepatuStacattu !== 0:
-        money = money - sepatuStacattu;
-        barangBelanjaan.push('Sepatu Stacattu');
-        sepatuStacattu = 0;
-        break;
-        case money >= bajuZoro && bajuZoro !== 0:
-        money = money - bajuZoro;
-        barangBelanjaan.push('Baju Zoro');
-        bajuZoro = 0;
-        break;
-        case money >= bajuHN && bajuHN !== 0:
-        money = money - bajuHN;
-        barangBelanjaan.push('Baju H&N');
-        bajuHN = 0;
-        break;
-        case money >= sweaterUniklooh && sweaterUniklooh !== 0:
-        money = money - sweaterUniklooh;
-        barangBelanjaan.push('Sweater Uniklooh');
-        sweaterUniklooh = 0;
-        break;
-        case money >= casingHandphone && casingHandphone !== 0:
-        money = money - casingHandphone;
-        barangBelanjaan.push('Casing Handphone');
-        casingHandphone = 0;
-        break;
-        default:
-        barangBisaDibeli = 0;
-      }
+    var sepatuStacattu = 1500000;
+    var bajuZoro = 500000;
+    var bajuHN = 250000;
+    var sweaterUniklooh = 175000;
+    var casingHandphone = 50000;
+    var barangBisaDibeli = 1;
+    var barangBelanjaan = [];
+    var dompet = money;
+    
+    if (memberId === undefined || memberId === '') {
+        return 'Mohon maaf, toko X hanya berlaku untuk member saja';
     }
-    var belanja = {
-      memberId:  memberId,
-      money: dompet,
-      listPurchased: barangBelanjaan,
-      changeMoney: money
+    else if (money < 50000) {
+        return 'Mohon maaf, uang tidak cukup';
     }
-    return belanja;
-  }
+    else {
+        while (money >= casingHandphone && barangBisaDibeli === 1) {
+            switch (true) {
+                case money >= sepatuStacattu && sepatuStacattu !== 0:
+                    money = money - sepatuStacattu;
+                    barangBelanjaan.push('Sepatu Stacattu');
+                    sepatuStacattu = 0;
+                break;
+                case money >= bajuZoro && bajuZoro !== 0:
+                    money = money - bajuZoro;
+                    barangBelanjaan.push('Baju Zoro');
+                    bajuZoro = 0;
+                break;
+                case money >= bajuHN && bajuHN !== 0:
+                    money = money - bajuHN;
+                    barangBelanjaan.push('Baju H&N');
+                    bajuHN = 0;
+                break;
+                case money >= sweaterUniklooh && sweaterUniklooh !== 0:
+                    money = money - sweaterUniklooh;
+                    barangBelanjaan.push('Sweater Uniklooh');
+                    sweaterUniklooh = 0;
+                break;
+                case money >= casingHandphone && casingHandphone !== 0:
+                    money = money - casingHandphone;
+                    barangBelanjaan.push('Casing Handphone');
+                    casingHandphone = 0;
+                break;
+                default:
+                    barangBisaDibeli = 0;
+                break;
+            }
+        }
+        var belanja = {
+            memberId: memberId,
+            money: dompet,
+            listPurchased: barangBelanjaan,
+            changeMoney: money
+        }
+        return belanja;
+    }
 }
 
 // TEST CASES
